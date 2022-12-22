@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;" styleClass="background" stylesheets="@Home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hotel_transylvania.ForgetController">
+    <children>
+      <AnchorPane fx:id="emailConfirmation" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fx:id="emailError" fill="#ff8181" layoutX="524.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.60000000000002" />
+            <MFXTextField id="f7" fx:id="emailField" floatMode="BORDER" floatingText="Email" focusTraversable="false" layoutX="524.0" layoutY="206.0" onKeyReleased="#checkEmail" prefHeight="38.0" prefWidth="230.0" styleClass="field" stylesheets="@Styles/Style.css">
+               <textFill>
+                  <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
+               </textFill>
+            </MFXTextField>
+            <MFXButton fx:id="sendEmail" buttonType="RAISED" depthLevel="LEVEL3" layoutX="670.0" layoutY="311.0" onMouseClicked="#sendClicked" prefHeight="35.0" prefWidth="80.0" stylesheets="@Styles/Style.css" text="Send" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="OtpCheck" prefHeight="720.0" prefWidth="1280.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MFXTextField id="f7" fx:id="otp" floatMode="BORDER" floatingText="Enter OTP" focusTraversable="false" layoutX="495.0" layoutY="242.0" prefHeight="38.0" prefWidth="230.0" styleClass="field" stylesheets="@Styles/Style.css">
+               <textFill>
+                  <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
+               </textFill>
+            </MFXTextField>
+            <Text fx:id="emailError1" fill="#ff8181" layoutX="495.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.60000000000002" />
+            <MFXButton fx:id="checkOtp" buttonType="RAISED" depthLevel="LEVEL3" layoutX="641.0" layoutY="342.0" onMouseClicked="#otpCheck" prefHeight="35.0" prefWidth="80.0" stylesheets="@Styles/Style.css" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ChangePassword" prefHeight="720.0" prefWidth="1280.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MFXPasswordField id="f8" fx:id="passwordField" caretVisible="false" floatMode="BORDER" floatingText="Password" focusTraversable="false" layoutX="587.0" layoutY="274.0" onKeyReleased="#checkPassword" prefHeight="24.0" prefWidth="186.0" styleClass="field" stylesheets="@Styles/Style.css">
+               <textFill>
+                  <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
+               </textFill>
+            </MFXPasswordField>
+            <MFXPasswordField id="f9" fx:id="conPasswordField" caretVisible="false" floatMode="BORDER" floatingText="Confirm Password" focusTraversable="false" layoutX="587.0" layoutY="360.0" onKeyReleased="#checkConPassword" prefHeight="24.0" prefWidth="186.0" styleClass="field" stylesheets="@Styles/Style.css">
+               <textFill>
+                  <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
+               </textFill>
+            </MFXPasswordField>
+            <Text fx:id="passwordError" fill="#ff8181" layoutX="587.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.60000000000002" />
+            <Text fx:id="conPasswordError" fill="#ff8181" layoutX="587.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.60000000000002" />
+            <MFXButton fx:id="next" buttonType="RAISED" depthLevel="LEVEL3" layoutX="693.0" layoutY="444.0" onMouseClicked="#nextClicked" prefHeight="35.0" prefWidth="80.0" stylesheets="@Styles/Style.css" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+        <FontAwesomeIconView fx:id="back" fill="WHITE" glyphName="ARROW_LEFT" layoutX="819.0" layoutY="84.0" onMouseClicked="#backClicked" size="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </FontAwesomeIconView>
+        <FontAwesomeIconView fx:id="close" fill="WHITE" glyphName="CLOSE" onMouseClicked="#closeWindow" size="14.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </FontAwesomeIconView>
+    </children>
+</AnchorPane>

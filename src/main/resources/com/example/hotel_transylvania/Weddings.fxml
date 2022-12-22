@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@weddings.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hotel_transylvania.WeddingsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="212.0" layoutX="-6.0" layoutY="-12.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: rgba(0,0,0,0.5);" width="1295.0" />
+      <Label layoutX="533.0" layoutY="71.0" text="Weddings" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="53.0" />
+         </font>
+      </Label>
+      <Label layoutX="412.0" layoutY="413.0" text="Book your Dream Wedding Now">
+         <font>
+            <Font name="Times New Roman" size="38.0" />
+         </font>
+      </Label>
+      <Button layoutX="607.0" layoutY="516.0" mnemonicParsing="false" styleClass="btn" text="Book Now">
+         <font>
+            <Font name="Times New Roman" size="20.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fx:id="close" fill="WHITE" glyphName="CLOSE" layoutX="1265.0" layoutY="32.0" onMouseClicked="#closeWindow" size="14.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </FontAwesomeIconView>
+      <FontAwesomeIconView fx:id="back" fill="WHITE" glyphName="ARROW_LEFT" layoutX="24.0" layoutY="29.0" onMouseClicked="#backClicked" size="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </FontAwesomeIconView>
+   </children>
+</AnchorPane>

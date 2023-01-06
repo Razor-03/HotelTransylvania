@@ -287,9 +287,13 @@ public class SignupController implements Initializable {
         }
 
         if (check[0] && check[1] && check[2] && check[3] && check[4] && check[5] && check[6]) {
-            FileHandling file = new FileHandling(firstNameField.getText(),lastNameField.getText(),
+//            FileHandling file = new FileHandling(firstNameField.getText(),lastNameField.getText(),
+//                    userField.getText(),contactField.getText(),emailField.getText(),passwordField.getText());
+//            file.writeFile();
+
+            UserDB database = new UserDB(firstNameField.getText(),lastNameField.getText(),
                     userField.getText(),contactField.getText(),emailField.getText(),passwordField.getText());
-            file.writeFile();
+
             loginClicked(event);
 
         }

@@ -50,6 +50,9 @@ public class ForgetController {
     private Text otpError;
 
     @FXML
+    private Text remains;
+
+    @FXML
     private MFXTextField emailField;
 
     @FXML
@@ -73,7 +76,11 @@ public class ForgetController {
     boolean check[] = new boolean[2];
 
 
-    FileHandling file = new FileHandling();
+//    FileHandling file = new FileHandling();
+    UserDB database = new UserDB();
+
+    EmailAuthentication emailAuthentication;
+
     @FXML
     void backClicked(MouseEvent event) {
         try {
@@ -114,10 +121,14 @@ public class ForgetController {
     boolean check1;
     @FXML
     void sendClicked(MouseEvent event) {
-        FileHandling checker = new FileHandling();
-        if(check1 && checker.checkEmial(emailField.getText())){
+//        FileHandling checker = new FileHandling();
+        if(check1 && database.checkEmial(emailField.getText())){
+            emailAuthentication = new EmailAuthentication(emailField.getText());
+            emailAuthentication.sendOtp();
             emailConfirmation.setVisible(false);
             OtpCheck.setVisible(true);
+        }else{
+            sendError.setText("Email is not Registered");
         }
     }
 
@@ -130,15 +141,18 @@ public class ForgetController {
 
     @FXML
     void otpCheck(MouseEvent event) {
-        if(otp.getText().equals("1234")){
+        if(otp.getText().equals(emailAuthentication.otp)){
             OtpCheck.setVisible(false);
             ChangePassword.setVisible(true);
         }else{
             otpError.setText("OTP does not match");
             otpChecker++;
+            remains.setText(4-otpChecker+" attempts remaining");
         }
         if(otpChecker >= 4){
             checkOtp.setDisable(true);
+            remains.setVisible(false);
+            otpError.setVisible(false);
         }
     }
 
@@ -178,18 +192,8 @@ public class ForgetController {
     @FXML
     void nextClicked(MouseEvent event) {
         if(check[0]&&check[1]){
-            file.changePassword(passwordField.getText(),emailField.getText());
-            try {
-                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                // stage.initStyle(StageStyle.DECORATED);
-                stage.show();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            database.changePassword(passwordField.getText(),emailField.getText());
+            Main.changeScene(event,"Login.fxml");
         }
     }
 

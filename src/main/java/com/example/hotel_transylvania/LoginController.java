@@ -16,12 +16,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -133,6 +135,7 @@ public class LoginController {
 
     @FXML
     void loginClicked(MouseEvent event) {
+
         if (usernameField.getText().isEmpty()) {
             usernameField.setStyle("-fx-border-color:  red;");
             userError.setText("*Field is empty");
@@ -145,8 +148,10 @@ public class LoginController {
             check[1] = false;
         }
         if (check[0] && check[1]) {
-            FileHandling file = new FileHandling();
-            boolean check = file.checkLogin(usernameField.getText(),passwordField.getText());
+//            FileHandling file = new FileHandling();
+//            boolean check = file.checkLogin(usernameField.getText(),passwordField.getText());
+            UserDB datebase = new UserDB();
+            boolean check = datebase.checkLogin(usernameField.getText(),passwordField.getText());
             if(check) {
                 try {
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

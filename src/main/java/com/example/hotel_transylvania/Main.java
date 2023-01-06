@@ -11,7 +11,6 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.io.IOException;
 
 public class Main extends Application {
@@ -34,8 +33,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
-    }
 
+    }
 
     public static void close(Stage stage) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

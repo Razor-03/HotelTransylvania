@@ -95,7 +95,7 @@
                               <FontAwesomeIconView glyphName="FIRE" layoutX="569.0" layoutY="261.0" size="14.0" />
                               <FontAwesomeIconView glyphName="CUTLERY" layoutX="569.0" layoutY="295.0" size="14.0" />
                               <FontAwesomeIconView glyphName="HEARTBEAT" layoutX="568.0" layoutY="329.0" size="14.0" />
-                              <MFXButton fx:id="bookNow" buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#book1Clicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
+                              <MFXButton fx:id="bookNow" buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#bookClicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -160,7 +160,7 @@
                               <FontAwesomeIconView glyphName="FIRE" layoutX="569.0" layoutY="261.0" size="14.0" />
                               <FontAwesomeIconView glyphName="CUTLERY" layoutX="569.0" layoutY="295.0" size="14.0" />
                               <FontAwesomeIconView glyphName="HEARTBEAT" layoutX="568.0" layoutY="329.0" size="14.0" />
-                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#book2Clicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#bookClicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -225,7 +225,7 @@
                               <FontAwesomeIconView glyphName="FIRE" layoutX="569.0" layoutY="261.0" size="14.0" />
                               <FontAwesomeIconView glyphName="CUTLERY" layoutX="569.0" layoutY="295.0" size="14.0" />
                               <FontAwesomeIconView glyphName="HEARTBEAT" layoutX="568.0" layoutY="329.0" size="14.0" />
-                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#book3Clicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#bookClicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -290,7 +290,7 @@
                               <FontAwesomeIconView glyphName="FIRE" layoutX="569.0" layoutY="261.0" size="14.0" />
                               <FontAwesomeIconView glyphName="CUTLERY" layoutX="569.0" layoutY="295.0" size="14.0" />
                               <FontAwesomeIconView glyphName="HEARTBEAT" layoutX="568.0" layoutY="329.0" size="14.0" />
-                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#book4Clicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#bookClicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -355,7 +355,7 @@
                               <FontAwesomeIconView glyphName="FIRE" layoutX="569.0" layoutY="261.0" size="14.0" />
                               <FontAwesomeIconView glyphName="CUTLERY" layoutX="569.0" layoutY="295.0" size="14.0" />
                               <FontAwesomeIconView glyphName="HEARTBEAT" layoutX="568.0" layoutY="329.0" size="14.0" />
-                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#book5Clicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#bookClicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -420,7 +420,7 @@
                               <FontAwesomeIconView glyphName="FIRE" layoutX="569.0" layoutY="261.0" size="14.0" />
                               <FontAwesomeIconView glyphName="CUTLERY" layoutX="569.0" layoutY="295.0" size="14.0" />
                               <FontAwesomeIconView glyphName="HEARTBEAT" layoutX="568.0" layoutY="329.0" size="14.0" />
-                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#book6Clicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL3" layoutX="1158.0" layoutY="299.0" onMouseClicked="#bookClicked" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: black;" text="BOOK NOW" textFill="WHITE">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -464,7 +464,7 @@
                <font>
                   <Font size="14.0" />
                </font></Text>
-            <MFXTextField id="f1" fx:id="card" floatMode="BORDER" floatingText="Card Number" layoutX="677.0" layoutY="155.0" prefHeight="38.0" prefWidth="211.0" styleClass="field" stylesheets="@Styles/Style.css">
+            <MFXTextField id="f1" fx:id="card" floatMode="BORDER" floatingText="Card Number" layoutX="677.0" layoutY="155.0" onKeyReleased="#checkCard" prefHeight="38.0" prefWidth="211.0" styleClass="field" stylesheets="@Styles/Style.css">
                <textFill>
                   <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
                </textFill>
@@ -474,7 +474,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <MFXTextField id="f1" fx:id="code" floatMode="BORDER" floatingText="Security code" layoutX="677.0" layoutY="337.0" prefHeight="38.0" prefWidth="65.0" styleClass="field" stylesheets="@Styles/Style.css">
+            <MFXTextField id="f1" fx:id="code" floatMode="BORDER" floatingText="Security code" focusTraversable="false" layoutX="677.0" layoutY="337.0" onKeyReleased="#codeCheck" prefHeight="38.0" prefWidth="65.0" styleClass="field" stylesheets="@Styles/Style.css">
                <textFill>
                   <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
                </textFill>
@@ -499,17 +499,21 @@
                </textFill>
             </MFXTextField>
             <Label layoutX="682.0" layoutY="238.0" text="Expirey" textFill="#b1b1b1" />
-            <MFXTextField id="f1" fx:id="month" floatMode="BORDER" floatingText="Month" layoutX="676.0" layoutY="257.0" prefHeight="38.0" prefWidth="0.0" styleClass="field" stylesheets="@Styles/Style.css">
+            <MFXTextField id="f1" fx:id="month" floatMode="BORDER" floatingText="Month" layoutX="676.0" layoutY="257.0" onKeyReleased="#monthCheck" prefHeight="38.0" prefWidth="0.0" styleClass="field" stylesheets="@Styles/Style.css">
                <textFill>
                   <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
-            <MFXTextField id="f1" fx:id="year" floatMode="BORDER" floatingText="Year" layoutX="769.0" layoutY="257.0" prefHeight="38.0" prefWidth="45.0" styleClass="field" stylesheets="@Styles/Style.css">
+            <MFXTextField id="f1" fx:id="year" floatMode="BORDER" floatingText="Year" layoutX="769.0" layoutY="257.0" onKeyReleased="#yearCheck" prefHeight="38.0" prefWidth="45.0" styleClass="field" stylesheets="@Styles/Style.css">
                <textFill>
                   <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
                </textFill>
             </MFXTextField>
             <Text fx:id="text" fill="#03ff03" layoutX="774.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Sucessfull!" visible="false" />
+            <Text fx:id="cardError" fill="RED" layoutX="677.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="211.2" />
+            <Text fx:id="monthError" fill="RED" layoutX="677.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="74.936767578125" />
+            <Text fx:id="yearError" fill="RED" layoutX="772.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="74.936767578125" />
+            <Text fx:id="codeError" fill="RED" layoutX="679.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="74.936767578125" />
          </children>
       </AnchorPane>
       <FontAwesomeIconView fx:id="back" fill="WHITE" glyphName="ARROW_LEFT" layoutX="14.0" layoutY="19.0" onMouseClicked="#backClicked" size="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">

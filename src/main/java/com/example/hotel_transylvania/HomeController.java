@@ -4,6 +4,7 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,10 +14,16 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class HomeController {
+public class HomeController implements Initializable {
 
     @FXML
     private FontAwesomeIconView back;
@@ -33,6 +40,15 @@ public class HomeController {
     private Parent root;
     private Stage stage;
     private Scene scene;
+
+     static String userName;
+
+    @FXML
+    private MediaView mediaView;
+
+    File file = new File("D:/.SEM # 3/OOP/IntelliJ/Hotel Transylvania/src/main/resources/com/example/hotel_transylvania/Video.mp4");
+    Media media = new Media(file.toURI().toString());
+    MediaPlayer mediaPlayer = new MediaPlayer(media);
 
     @FXML
     void backClicked(MouseEvent event) {
@@ -56,7 +72,8 @@ public class HomeController {
     }
 
     public void signedIn(String username){
-        signInLabel.setText("Signed in as:   " + username);
+        userName = username;
+        signInLabel.setText("Signed in as:   " + userName);
     }
     @FXML
     void closeWindow(MouseEvent event) {
@@ -75,6 +92,11 @@ public class HomeController {
             e.getMessage();
         }
     }
+    @FXML
+    void aboutClicked(MouseEvent event) {
+        Main.changeScene(event,"About.fxml");
+    }
+
 
     public void bookingBtn(ActionEvent event){
         try{
@@ -99,4 +121,17 @@ public class HomeController {
             e.getMessage();
         }
     }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        signInLabel.setText("Signed in as:   " + userName);
+        mediaView.setMediaPlayer(mediaPlayer);
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void galleryClicked(MouseEvent event) {
+        Main.changeScene(event,"Gallery.fxml");
+    }
+
 }

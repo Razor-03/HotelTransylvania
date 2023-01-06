@@ -21,7 +21,7 @@
     -fx-background-color: #8f740a;
 }
 
-#bookButton {
+#aboutButton {
   -fx-border-color: transparent transparent #8f740a transparent;
   -fx-border-width: 1px;
 }

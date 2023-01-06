@@ -14,6 +14,12 @@ public class WeddingsController {
     }
     @FXML
     void backClicked(MouseEvent event) {
+
         Main.changeScene(event,"Bookings.fxml");
+    }
+
+    @FXML
+    void aboutClicked(MouseEvent event) {
+        Main.changeScene(event,"About.fxml");
     }
 }

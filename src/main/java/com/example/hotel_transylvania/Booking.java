@@ -5,17 +5,12 @@ import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.materialfx.controls.MFXScrollPane;
 import io.github.palexdev.materialfx.controls.MFXTextField;
-import io.github.palexdev.materialfx.controls.cell.MFXDateCell;
-import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DateCell;
-import javafx.scene.control.DatePicker;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -24,14 +19,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import java.io.IOException;
-import java.net.URL;
 import java.time.LocalDate;
-import java.util.ResourceBundle;
 
-public class Booking {
+public class Booking{
 
     @FXML
     private FontAwesomeIconView back;
@@ -86,6 +78,17 @@ public class Booking {
     static String username;
 
     @FXML
+    private Text cardError;
+
+    @FXML
+    private Text yearError;
+    @FXML
+    private Text monthError;
+    @FXML
+    private Text codeError;
+
+
+    @FXML
     void backClicked(MouseEvent event) {
         try {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -106,62 +109,13 @@ public class Booking {
     }
 
     @FXML
-    void book1Clicked(MouseEvent event) {
-        Image img = new Image("file:src/main/resources/com/example/hotel_transylvania/room1.jpg");
-        paymentImg.setImage(img);
-        roomName.setText("Deluxe King Room");
-//        totalPayment.setText(String.valueOf(155*Integer.parseInt(nights.getText())));
-        price = "155";
+    void bookClicked(MouseEvent event){
+        ObservableList<Node> list = (((AnchorPane)((MFXButton)event.getSource()).getParent()).getChildren());
+        paymentImg.setImage(((ImageView) list.get(1)).getImage());
+        roomName.setText(((Text)list.get(2)).getText());
+        price = ((Text)list.get(5)).getText().replace("$","");
         changeToPayment(event);
     }
-
-    @FXML
-    void book2Clicked(MouseEvent event) {
-        Image img = new Image("file:src/main/resources/com/example/hotel_transylvania/room2.jpg");
-        paymentImg.setImage(img);
-        roomName.setText("Deluxe Twin");
-        price = "155";
-        changeToPayment(event);
-    }
-
-    @FXML
-    void book3Clicked(MouseEvent event) {
-        Image img = new Image("file:src/main/resources/com/example/hotel_transylvania/room3.jpg");
-        paymentImg.setImage(img);
-        roomName.setText("Executive King Room");
-        totalPayment.setText("170");
-        price = "170";
-        changeToPayment(event);
-    }
-
-    @FXML
-    void book4Clicked(MouseEvent event) {
-        Image img = new Image("file:src/main/resources/com/example/hotel_transylvania/room4.jpg");
-        paymentImg.setImage(img);
-        roomName.setText("Platinum King Room");
-        price = "185";
-        changeToPayment(event);
-    }
-
-    @FXML
-    void book5Clicked(MouseEvent event) {
-        Image img = new Image("file:src/main/resources/com/example/hotel_transylvania/room5.jpg");
-        paymentImg.setImage(img);
-        roomName.setText("Executive Twin");
-        price = "170";
-        changeToPayment(event);
-
-    }
-
-    @FXML
-    void book6Clicked(MouseEvent event) {
-        Image img = new Image("file:src/main/resources/com/example/hotel_transylvania/room6.jpg");
-        paymentImg.setImage(img);
-        roomName.setText("3 Bed Apartments");
-        price = "310";
-        changeToPayment(event);
-    }
-
 
 
     void changeToPayment(MouseEvent event){
@@ -171,23 +125,22 @@ public class Booking {
 
     @FXML
     void calculate(KeyEvent event) {
+//        if()
         if(event.getCode().equals(KeyCode.ENTER)) {
-            totalPayment.setText(String.valueOf(Integer.parseInt(price) * Integer.parseInt(nights.getText())));
+            totalPayment.setText(String.valueOf(Float.parseFloat(price) * Integer.parseInt(nights.getText())));
         }
     }
 
     @FXML
     void nextClicked(MouseEvent event) {
-        if(!(card.getText().isEmpty()&&month.getText().isEmpty()&&year.getText().isEmpty()&&code.getText().isEmpty()) ){
+        if(!card.getText().isEmpty()&&!month.getText().isEmpty()&&!year.getText().isEmpty()&&!code.getText().isEmpty() ){
             text.setVisible(true);
 
-            RoomFile file = new RoomFile(username, roomName.getText(), inDate.getText(), nights.getText(), String.valueOf(totalPayment.getText()));
-            file.writeFile();
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+//            RoomFile file = new RoomFile(username, roomName.getText(), inDate.getText(), nights.getText(), String.valueOf(totalPayment.getText()));
+//            file.writeFile();
+
+            RoomDB database = new RoomDB(username, roomName.getText(), inDate.getText(), nights.getText(), String.valueOf(totalPayment.getText()));
+
             Main.changeScene(event, "Homepage.fxml");
         }else {
             text.setText("Fields are empty");
@@ -196,7 +149,48 @@ public class Booking {
         }
     }
 
+
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @FXML
+    void checkCard(KeyEvent event) {
+
+        String str = card.getText().replaceAll("[^0-9]+", "");
+        if(CardValidation.validation(Long.parseLong(str))){
+            cardError.setText("");
+        }else{
+            cardError.setText("Invalid Card");
+        }
+    }
+
+    @FXML
+    void codeCheck(KeyEvent event) {
+    if(code.getText().length()==4){
+        codeError.setText("");
+    }else {
+        codeError.setText("Invalid Code");
+    }
+    }
+
+    @FXML
+    void yearCheck(KeyEvent event) {
+        int check = Integer.parseInt(year.getText());
+        if(check >= LocalDate.now().getYear() && check < LocalDate.now().getYear()+10){
+            yearError.setText("");
+        }else {
+            yearError.setText("Invalid");
+        }
+    }
+
+    @FXML
+    void monthCheck(KeyEvent event) {
+        int check = Integer.parseInt(month.getText());
+        if(check >= LocalDate.now().getMonthValue() && check <= 12){
+            monthError.setText("");
+        }else {
+            monthError.setText("Invalid");
+        }
     }
 }

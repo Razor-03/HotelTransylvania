@@ -21,6 +21,16 @@ public class BookingsController {
 
     }
 
+    @FXML
+    void aboutClicked(MouseEvent event) {
+        Main.changeScene(event,"About.fxml");
+    }
+
+    @FXML
+    void galleryClicked(MouseEvent event) {
+        Main.changeScene(event,"Gallery.fxml");
+    }
+
     public void bookingBtn(ActionEvent event) {
         try {
             root = FXMLLoader.load(getClass().getResource("Bookings.fxml"));

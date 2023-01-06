@@ -7,12 +7,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="background" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hotel_transylvania.HomeController">
    <children>
-      <Rectangle fx:id="homepageRooms" arcHeight="5.0" arcWidth="5.0" height="720.0" layoutX="-2.0" opacity="0.8" smooth="false" stroke="BLACK" strokeType="INSIDE" width="1284.0" />
+      <MediaView fx:id="mediaView" fitHeight="720.0" fitWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Rectangle fx:id="homepageRooms" arcHeight="5.0" arcWidth="5.0" height="720.0" layoutX="-2.0" opacity="0.6" smooth="false" stroke="BLACK" strokeType="INSIDE" width="1284.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <FontAwesomeIconView fx:id="back" fill="WHITE" glyphName="ARROW_LEFT" layoutX="819.0" layoutY="84.0" onMouseClicked="#backClicked" size="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -28,22 +30,17 @@
             <Font name="Bell MT" size="22.0" />
          </font>
       </Button>
-      <Button fx:id="servicesButton" layoutX="353.0" layoutY="85.0" mnemonicParsing="false" onAction="#servicesBtn" style="-fx-background-color: rgba(0,0,0,0);" text="Services" textFill="WHITE">
+      <Button fx:id="servicesButton" layoutX="397.0" layoutY="85.0" mnemonicParsing="false" onAction="#servicesBtn" style="-fx-background-color: rgba(0,0,0,0);" text="Wellness" textFill="WHITE">
          <font>
             <Font name="Bell MT" size="22.0" />
          </font>
       </Button>
-      <Button fx:id="golfButton" layoutX="543.0" layoutY="85.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);" text="Golf Club" textFill="WHITE">
+      <Button fx:id="galleryButton" layoutX="653.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#galleryClicked" style="-fx-background-color: rgba(0,0,0,0);" text="Transylvania Gallery" textFill="WHITE">
          <font>
             <Font name="Bell MT" size="22.0" />
          </font>
       </Button>
-      <Button fx:id="galleryButton" layoutX="732.0" layoutY="85.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);" text="Transylvania Gallery" textFill="WHITE">
-         <font>
-            <Font name="Bell MT" size="22.0" />
-         </font>
-      </Button>
-      <Button fx:id="usButton" layoutX="1014.0" layoutY="85.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);" text="About Us " textFill="WHITE">
+      <Button fx:id="usButton" layoutX="1014.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#aboutClicked" style="-fx-background-color: rgba(0,0,0,0);" text="About Us " textFill="WHITE">
          <font>
             <Font name="Bell MT" size="22.0" />
          </font>

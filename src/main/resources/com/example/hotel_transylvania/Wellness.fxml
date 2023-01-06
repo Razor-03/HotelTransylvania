@@ -17,7 +17,7 @@
    <children>
       <ScrollPane hbarPolicy="NEVER" prefHeight="720.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <AnchorPane prefHeight="2484.0" prefWidth="1282.0" styleClass="root">
+            <AnchorPane prefHeight="2484.0" prefWidth="1282.0" styleClass="root" stylesheets="@Services.css">
                <children>
                   <ImageView fitHeight="560.0" fitWidth="1280.0" layoutX="1.0" pickOnBounds="true" AnchorPane.bottomAnchor="1939.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                      <image>
@@ -282,17 +282,22 @@
                         <Font name="Bell MT" size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="servicesButton" layoutX="435.0" layoutY="114.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);" stylesheets="@Services.css" text="Wellness" textFill="WHITE">
+                  <Button fx:id="servicesButton" layoutX="383.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);" stylesheets="@Services.css" text="Wellness" textFill="WHITE">
                      <font>
                         <Font name="Bell MT" size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="galleryButton" layoutX="708.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#galleryClicked" style="-fx-background-color: rgba(0,0,0,0);" text="Transylvania Gallery" textFill="WHITE">
+                  <Button fx:id="golfButton" layoutX="573.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);" text="Golf Club" textFill="WHITE">
                      <font>
                         <Font name="Bell MT" size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="usButton" layoutX="1044.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#aboutClicked" style="-fx-background-color: rgba(0,0,0,0);" text="About Us " textFill="WHITE">
+                  <Button fx:id="galleryButton" layoutX="762.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);" text="Transylvania Gallery" textFill="WHITE">
+                     <font>
+                        <Font name="Bell MT" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="usButton" layoutX="1044.0" layoutY="115.0" mnemonicParsing="false" style="-fx-background-color: rgba(0,0,0,0);" text="About Us " textFill="WHITE">
                      <font>
                         <Font name="Bell MT" size="22.0" />
                      </font>
